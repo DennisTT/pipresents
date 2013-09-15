@@ -95,6 +95,25 @@ class ImagePlayer:
             # pil_image=pil_image_enhancer.enhance(0.1)
             # pil_image=pil_image.rotate(45)
             # tk_image = PIL.ImageTk.PhotoImage(pil_image)
+
+            # resize image to fit canvas
+            canvas_width = self.canvas.winfo_width()
+            canvas_height = self.canvas.winfo_height()
+            if int(canvas_width) == 1 and int(canvas_height) == 1:
+                canvas_width = self.canvas.winfo_reqwidth()
+                canvas_height = self.canvas.winfo_reqheight()
+            image_ratio = float(self.pil_image.size[0]) / float(self.pil_image.size[1])
+            canvas_ratio = float(canvas_width) / float(canvas_height)
+            if image_ratio < canvas_ratio:
+                image_height = canvas_height
+                image_width = self.pil_image.size[0] * canvas_height / self.pil_image.size[1]
+            elif image_ratio > canvas_ratio:
+                image_width = canvas_width
+                image_height = self.pil_image.size[1] * canvas_width / self.pil_image.size[0]
+            else:
+                image_width = canvas_width
+                image_height = canvas_height
+            self.pil_image = self.pil_image.resize((int(image_width), int(image_height)), PIL.Image.ANTIALIAS)
         else:
             self.pil_image=None
             # display 'Out of Order' for 7 seconds
