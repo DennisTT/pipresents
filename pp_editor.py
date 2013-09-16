@@ -29,7 +29,7 @@ from pp_validate import Validator
 class PPEditor:
 
     IMAGE_FILES=('Image files', '.gif','.jpg','.jpeg','.bmp','.png','.tif')
-    VIDEO_FILES=('video files','.mp4','.mkv','.avi','.mp2','.wmv')
+    VIDEO_FILES=('video files','.mp4','.mkv','.avi','.mp2','.wmv', '.vob')
     AUDIO_FILES=('audio files','.mp3','.wav','.ogg')
 
 # ***************************************

@@ -23,7 +23,7 @@ class LiveShow:
                 'video':{'title':'New Video','track-ref':'','type':'video','location':'','omx-audio':''}}
     
     IMAGE_FILES=('.gif','.jpg','.jpeg','.bmp','.png','.tif')
-    VIDEO_FILES=('.mp4','.mkv','.avi','.mp2','.wmv')
+    VIDEO_FILES=('.mp4','.mkv','.avi','.mp2','.wmv', '.vob')
     AUDIO_FILES=('.mp3','.wav','.ogg')
                          
 # *******************
